@@ -81,7 +81,7 @@ GOOS=linux GOARCH=amd64 go build -o Stashbird
 GOOS=darwin GOARCH=arm64 go build -o Stashbird   # Apple Silicon
 ```
 
-## Como usar (em 60 segundos)
+## Como usar
 
 1. **Execute o binário** o browser padrão abre sozinho
 2. **Adicione pastas** na barra lateral, são as pastas que vão editar/sincronizar
