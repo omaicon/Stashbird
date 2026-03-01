@@ -19,7 +19,7 @@
 
 ---
 
-## 🤔 Tá, mas o que é isso?
+## Tá, mas o que é isso?
 
 Imagine se o Syncthing, o Obsidian e o Google Drive entrassem num bar e decidissem fundir numa coisa só. Esse é o Stashbird.
 
@@ -30,7 +30,7 @@ Imagine se o Syncthing, o Obsidian e o Google Drive entrassem num bar e decidiss
 
 ---
 
-## ✨ O que faz
+## O que faz
 
 **📁 Sync de Arquivos**
 - Peer-to-peer via Tailscale criptografado, atravessa NAT, zero configuração de rede
@@ -55,7 +55,7 @@ Imagine se o Syncthing, o Obsidian e o Google Drive entrassem num bar e decidiss
 
 ---
 
-## 🚀 Quero testar AGORA
+## Quero testar AGORA
 
 ### Como Compilar
 
@@ -81,7 +81,7 @@ GOOS=linux GOARCH=amd64 go build -o Stashbird
 GOOS=darwin GOARCH=arm64 go build -o Stashbird   # Apple Silicon
 ```
 
-## 🎮 Como usar (em 60 segundos)
+## Como usar (em 60 segundos)
 
 1. **Execute o binário** o browser padrão abre sozinho
 2. **Adicione pastas** na barra lateral, são as pastas que vão editar/sincronizar
@@ -93,7 +93,7 @@ GOOS=darwin GOARCH=arm64 go build -o Stashbird   # Apple Silicon
 
 ---
 
-## 🛠️ Feito com
+## Feito com
 
 Go, Tailscale/tsnet, BoltDB, BLAKE3, Yamux, Goldmark, CodeMirror 6, D3.js, e uma quantidade questionável de café.
 
