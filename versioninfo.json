@@ -1,0 +1,40 @@
+{
+    "FixedFileInfo": {
+        "FileVersion": {
+            "Major": 1,
+            "Minor": 0,
+            "Patch": 0,
+            "Build": 0
+        },
+        "ProductVersion": {
+            "Major": 1,
+            "Minor": 0,
+            "Patch": 0,
+            "Build": 0
+        },
+        "FileFlagsMask": "3f",
+        "FileFlags ": "00",
+        "FileOS": "040004",
+        "FileType": "01",
+        "FileSubType": "00"
+    },
+    "StringFileInfo": {
+        "Comments": "Sincronização de arquivos peer-to-peer inspirada no Clark's Nutcracker",
+        "CompanyName": "Stashbird",
+        "FileDescription": "Stashbird",
+        "FileVersion": "v1.0.0",
+        "InternalName": "stashbird",
+        "LegalCopyright": "MIT License",
+        "OriginalFilename": "Stashbird.exe",
+        "ProductName": "Stashbird",
+        "ProductVersion": "v1.0.0"
+    },
+    "VarFileInfo": {
+        "Translation": {
+            "LangID": "0416",
+            "CharsetID": "04B0"
+        }
+    },
+    "IconPath": "stashbird.ico",
+    "ManifestPath": ""
+}
