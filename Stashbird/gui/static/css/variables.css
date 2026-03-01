@@ -1,0 +1,128 @@
+﻿/* ═══════════════════════════════════════════════
+   Stashbird — UI inspirada no TypDocs Studio
+   ═══════════════════════════════════════════════ */
+
+:root {
+    /* Cores principais — paleta neutra slate/navy */
+    --primary: #1e2d4a;
+    --primary-hover: #162238;
+    --primary-light: #dde5f0;
+    --primary-surface: #c8d8ee;
+
+    /* Fundos */
+    --bg: #ffffff;
+    --bg-card: rgba(255, 255, 255, 0.85);
+    --bg-secondary: #f5f7fa;
+    --bg-hover: #eef1f6;
+    --bg-active: #dde5f0;
+    --bg-muted: rgba(241, 244, 249, 0.6);
+
+    /* Textos */
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+
+    /* Bordas */
+    --border: rgba(214, 220, 232, 0.8);
+    --border-light: rgba(214, 220, 232, 0.45);
+    --border-strong: #c8d0df;
+
+    /* Sombras */
+    --shadow: 0 1px 3px 0 rgba(15, 23, 42, .08), 0 1px 2px -1px rgba(15, 23, 42, .08);
+    --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, .08), 0 2px 4px -2px rgba(15, 23, 42, .08);
+    --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, .08), 0 4px 6px -4px rgba(15, 23, 42, .08);
+
+    /* Dimensões */
+    --radius: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+    --sidebar-width: 252px;
+    --header-height: 56px;
+    --transition: 150ms cubic-bezier(.4, 0, .2, 1);
+
+    /* Status */
+    --success: #16a34a;
+    --success-light: #dcfce7;
+    --warning: #d97706;
+    --warning-light: #fef3c7;
+    --error: #dc2626;
+    --error-light: #fee2e2;
+    --info: #2563eb;
+    --info-light: #dbeafe;
+}
+
+/* ── Modo Escuro ── */
+[data-theme="dark"] {
+    --primary: #b0b0b0;
+    --primary-hover: #cccccc;
+    --primary-light: #1e1e1e;
+    --primary-surface: #282828;
+
+    --bg: #111111;
+    --bg-card: rgba(20, 20, 20, 0.9);
+    --bg-secondary: #1a1a1a;
+    --bg-hover: #2a2a2a;
+    --bg-active: #252525;
+    --bg-muted: rgba(26, 26, 26, 0.6);
+
+    --text-primary: #e8e8e8;
+    --text-secondary: #999999;
+    --text-muted: #606060;
+
+    --border: rgba(55, 55, 55, 0.8);
+    --border-light: rgba(55, 55, 55, 0.45);
+    --border-strong: #3a3a3a;
+
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, .4), 0 1px 2px -1px rgba(0, 0, 0, .4);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .4), 0 2px 4px -2px rgba(0, 0, 0, .4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, .4), 0 4px 6px -4px rgba(0, 0, 0, .4);
+
+    --success: #4ade80;
+    --success-light: #14532d;
+    --warning: #fbbf24;
+    --warning-light: #451a03;
+    --error: #f87171;
+    --error-light: #450a0a;
+    --info: #60a5fa;
+    --info-light: #1e3a5f;
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg);
+    overflow: hidden;
+    height: 100vh;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+}
+

@@ -1,0 +1,334 @@
+/* ═══════════════════════════════════════════════
+   FILE PREVIEW MODAL
+   ═══════════════════════════════════════════════ */
+
+/* ── Overlay ── */
+.preview-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: previewFadeIn 0.2s ease;
+}
+
+.preview-overlay.hidden {
+    display: none;
+}
+
+@keyframes previewFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ── Modal Container ── */
+.preview-modal {
+    background: var(--bg);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border);
+    width: 92vw;
+    max-width: 1200px;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    animation: previewSlideUp 0.25s ease;
+}
+
+@keyframes previewSlideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ── Header ── */
+.preview-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 18px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-secondary);
+    flex-shrink: 0;
+}
+
+.preview-modal-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    min-width: 0;
+    overflow: hidden;
+}
+
+.preview-modal-title span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.preview-modal-title svg {
+    flex-shrink: 0;
+    color: var(--text-muted);
+}
+
+.preview-modal-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.preview-modal-actions .btn-outline.small {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    font-size: 12px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text-primary);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s, box-shadow 0.15s;
+}
+
+.preview-modal-actions .btn-outline.small:hover {
+    background: var(--bg-secondary);
+    box-shadow: var(--shadow);
+}
+
+.preview-modal-actions .icon-btn {
+    font-size: 24px;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.preview-modal-actions .icon-btn:hover {
+    background: var(--bg-hover);
+}
+
+/* ── Body ── */
+.preview-modal-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    background: var(--bg-muted);
+    padding: 16px;
+    position: relative;
+}
+
+/* ── Image Preview ── */
+.preview-modal-body img.preview-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    user-select: none;
+}
+
+/* ── Video Preview ── */
+.preview-modal-body video.preview-video {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 6px;
+    background: #000;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+/* ── Audio Preview ── */
+.preview-audio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 40px;
+}
+
+.preview-audio-icon {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(124,58,237,0.3);
+}
+
+.preview-audio-icon svg {
+    width: 60px;
+    height: 60px;
+    fill: #fff;
+}
+
+.preview-audio-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+    text-align: center;
+    word-break: break-word;
+}
+
+.preview-modal-body audio.preview-audio {
+    width: 420px;
+    max-width: 100%;
+}
+
+/* ── PDF Preview ── */
+.preview-modal-body iframe.preview-pdf {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 4px;
+    background: #fff;
+}
+
+/* ── Text/Code Preview ── */
+.preview-text-container {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: #0f1117;
+    border-radius: var(--radius-lg);
+    padding: 0;
+}
+
+.preview-text-container pre {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #d4d4d4;
+    white-space: pre-wrap;
+    word-break: break-word;
+    tab-size: 4;
+}
+
+/* ── Unsupported / Download Fallback ── */
+.preview-fallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+    text-align: center;
+}
+
+.preview-fallback-icon {
+    width: 100px;
+    height: 100px;
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-fallback-icon svg {
+    width: 48px;
+    height: 48px;
+    fill: var(--text-muted);
+}
+
+.preview-fallback h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.preview-fallback p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.preview-fallback .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    font-size: 13px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+}
+
+.preview-fallback .btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+/* ── Loading ── */
+.preview-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.preview-spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--border);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: previewSpin 0.8s linear infinite;
+}
+
+@keyframes previewSpin {
+    to { transform: rotate(360deg); }
+}
+
+/* ── File Row Clickable State ── */
+.file-row.clickable {
+    cursor: pointer;
+}
+
+.file-row.clickable:hover {
+    background: var(--primary-light);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .preview-modal {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        max-width: none;
+    }
+
+    .preview-modal-body audio.preview-audio {
+        width: 100%;
+    }
+
+    .preview-modal-header {
+        padding: 10px 14px;
+    }
+}
