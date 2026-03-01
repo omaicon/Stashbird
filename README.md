@@ -107,6 +107,6 @@ MIT, faça o que quiser, só não diga que foi você que inventou.
 
 <p align="center">
   Feito com ☕ e Go<br>
-  <em>Seus arquivos. Seus dispositivos. Sem nuvem. Sem mimimi.</em><br>
+  <em>Seus arquivos. Seus dispositivos. Sem nuvem.</em><br>
   <strong>Stashbird</strong>  como o Clark's Nutcracker, nunca esquece onde guardou.
 </p>
