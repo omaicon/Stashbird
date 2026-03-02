@@ -28,6 +28,11 @@ Imagine se o Syncthing, o Obsidian e o Google Drive entrassem num bar e decidiss
 - **Roda num binário só** compilou, executou, pronto.
 > 💡 O nome vem do [Clark's Nutcracker](https://en.wikipedia.org/wiki/Clark%27s_nutcracker), um pássaro que esconde **98.000 sementes** e lembra onde guardou cada uma. Basicamente o oposto de você tentando achar aquele PDF.
 
+
+## Interface
+
+<img width="1894" height="854" alt="image" src="https://github.com/user-attachments/assets/81d319a5-7f77-4dea-b017-27c8718253d2" />
+
 ---
 
 ## O que faz
