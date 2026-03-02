@@ -26,7 +26,7 @@ Imagine se o Syncthing, o Obsidian e o Google Drive entrassem num bar e decidiss
 - **Sincroniza arquivos** direto entre seus dispositivos (sem servidor, sem nuvem, sem drama)
 - **Edita Markdown** com wikilinks `[[nota]]`, backlinks, grafo de notas tipo Obsidian, mas embutido
 - **Roda num binário só** compilou, executou, pronto.
-> 💡 O nome vem do [Clark's Nutcracker](https://en.wikipedia.org/wiki/Clark%27s_nutcracker), um pássaro que esconde **98.000 sementes** e lembra onde guardou cada uma. Basicamente o oposto de você tentando achar aquele PDF.
+> 💡 O nome vem do [Clark's Nutcracker](https://en.wikipedia.org/wiki/Clark%27s_nutcracker), um pássaro que esconde **98.000 sementes** e lembra onde guardou cada uma. Basicamente o oposto de nós tentando achar aquele PDF.
 
 
 ## Interface
