@@ -1,0 +1,241 @@
+/* ═══════════════════════════════════════════════
+   Stashbird — Graph View (Visualização em Grafo)
+   ═══════════════════════════════════════════════ */
+
+/* ── Container ── */
+.graph-view-container {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    background: #0d1117;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+[data-theme="dark"] .graph-view-container {
+    background: #0a0a0a;
+    border-color: #1a1a1a;
+}
+
+.graph-view-container svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ── Graph Nodes ── */
+.gv-node circle {
+    cursor: pointer;
+    transition: r 0.2s ease, filter 0.2s ease;
+}
+
+.gv-node:hover circle {
+    filter: brightness(1.4);
+}
+
+.gv-node text {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    fill: #8b949e;
+    pointer-events: none;
+    user-select: none;
+}
+
+.gv-node.highlighted text {
+    fill: #e6edf3;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.gv-node.dimmed circle {
+    opacity: 0.15;
+}
+
+.gv-node.dimmed text {
+    opacity: 0.1;
+}
+
+/* ── Graph Links ── */
+.gv-link {
+    stroke: #30363d;
+    stroke-opacity: 0.6;
+    transition: stroke-opacity 0.2s ease;
+}
+
+.gv-link.highlighted {
+    stroke: #58a6ff;
+    stroke-opacity: 1;
+    stroke-width: 2 !important;
+}
+
+.gv-link.dimmed {
+    stroke-opacity: 0.05;
+}
+
+/* ── Arrow markers ── */
+.gv-arrow {
+    fill: #30363d;
+}
+
+/* ── Tooltip ── */
+.graph-tooltip {
+    position: absolute;
+    padding: 8px 14px;
+    background: rgba(13, 17, 23, 0.95);
+    color: #e6edf3;
+    border-radius: 8px;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    pointer-events: none;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border: 1px solid #30363d;
+    z-index: 100;
+    max-width: 280px;
+    line-height: 1.5;
+    backdrop-filter: blur(8px);
+}
+
+.graph-tooltip.hidden {
+    display: none;
+}
+
+.graph-tooltip .tt-name {
+    font-weight: 600;
+    font-size: 13px;
+    color: #58a6ff;
+    margin-bottom: 4px;
+}
+
+.graph-tooltip .tt-path {
+    color: #8b949e;
+    font-size: 11px;
+    word-break: break-all;
+}
+
+.graph-tooltip .tt-links {
+    margin-top: 4px;
+    font-size: 11px;
+    color: #8b949e;
+}
+
+.graph-tooltip .tt-links span {
+    color: #58a6ff;
+    font-weight: 500;
+}
+
+/* ── Stats ── */
+.graph-stats {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    padding: 8px 14px;
+    background: rgba(13, 17, 23, 0.85);
+    color: #8b949e;
+    border-radius: 8px;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    border: 1px solid #21262d;
+    backdrop-filter: blur(8px);
+    z-index: 50;
+}
+
+.graph-stats span {
+    margin-right: 12px;
+}
+
+.graph-stats .stat-value {
+    color: #e6edf3;
+    font-weight: 600;
+}
+
+/* ── Folder Filter ── */
+.graph-folder-filter {
+    padding: 6px 12px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    outline: none;
+    min-width: 180px;
+    transition: border-color var(--transition);
+}
+
+.graph-folder-filter:hover {
+    border-color: var(--border-strong);
+}
+
+.graph-folder-filter:focus {
+    border-color: #58a6ff;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.15);
+}
+
+/* ── Empty state ── */
+.graph-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #8b949e;
+    text-align: center;
+    gap: 12px;
+}
+
+.graph-empty svg {
+    opacity: 0.3;
+}
+
+.graph-empty h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #c9d1d9;
+}
+
+.graph-empty p {
+    font-size: 14px;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+/* ── Loading ── */
+.graph-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #8b949e;
+    font-size: 14px;
+    gap: 10px;
+}
+
+.graph-loading .spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #30363d;
+    border-top-color: #58a6ff;
+    border-radius: 50%;
+    animation: graphSpin 0.8s linear infinite;
+}
+
+@keyframes graphSpin {
+    to { transform: rotate(360deg); }
+}
+
+/* #viewGraph layout */
+#viewGraph.active {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px 28px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#viewGraph .view-header {
+    flex-shrink: 0;
+}
