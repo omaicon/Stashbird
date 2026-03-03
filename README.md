@@ -106,7 +106,7 @@ Go, Tailscale/tsnet, BoltDB, BLAKE3, Yamux, Goldmark, CodeMirror 6, D3.js, e uma
 
 ## 📄 Licença
 
-MIT, faça o que quiser, só não diga que foi você que inventou.
+MIT
 
 ---
 
